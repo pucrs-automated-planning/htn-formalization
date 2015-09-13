@@ -58,10 +58,12 @@ Problem Instances
 
 Below are images of the problem instances that you need to model in <span style="font-variant:small-caps;">JShop2</span>, once you are done making your domain file. The legend that accompanies each image should be fairly self-explanatory; remember, you must model connections between grid locations for the agents to move from one to the other, and you can only move between grid locations that are connected. In the instances shown in Figures 1 and 2, any locations that share an edge can be considered connected. Locations that share only corners and no edges are not connected.
 
-![Problem 1](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob1.png "Problem 1" = 200x200)
+<!--![Problem 1](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob1.png "Problem 1")-->
+<img src="https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob1.png" width="200"></br>
 _Figure 1 - Problem 1_
 
-![Problem 1](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob2.png "Problem 2")
+<!--![Problem 2](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob2.png "Problem 2")-->
+<img src="https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob2.png" width="200"></br>
 _Figure 2 - Problem 2_
 
 Notice that the above pictures give you an idea of the initial state of the world (which you must encode in your <span style="font-variant:small-caps;">JShop2</span> problem file). They also tell you what the goals are - the deposit (in green), the agents (in red), the various gold nuggets (yellow) that must be collected, and the walls (black). If you look at the syntax of example <span style="font-variant:small-caps;">JShop2</span> problem files, you will see that these are the two parts of a problem file - (1) the initial state, and (2) the initial task network.

@@ -56,14 +56,20 @@ Your assignment is to develop a domain file using the specification above, and e
 Problem Instances
 =================
 
-Below are images of the problem instances that you need to model in <span style="font-variant:small-caps;">JShop2</span>, once you are done making your domain file. The legend that accompanies each image should be fairly self-explanatory; remember, you must model connections between grid locations for the agents to move from one to the other, and you can only move between grid locations that are connected. In the instances shown in Figures \[fig:fig\_pfile1\] and \[fig:fig\_pfile2\], any locations that share an edge can be considered connected. Locations that share only corners and no edges are not connected.
+Below are images of the problem instances that you need to model in <span style="font-variant:small-caps;">JShop2</span>, once you are done making your domain file. The legend that accompanies each image should be fairly self-explanatory; remember, you must model connections between grid locations for the agents to move from one to the other, and you can only move between grid locations that are connected. In the instances shown in Figures 1 and 2, any locations that share an edge can be considered connected. Locations that share only corners and no edges are not connected.
+
+![Problem 1](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob1.png "Problem 1")
+_Figure 1 - Problem 1_
+
+![Problem 1](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob2.png "Problem 2")
+_Figure 2 - Problem 2_
 
 Notice that the above pictures give you an idea of the initial state of the world (which you must encode in your <span style="font-variant:small-caps;">JShop2</span> problem file). They also tell you what the goals are - the deposit (in green), the agents (in red), the various gold nuggets (yellow) that must be collected, and the walls (black). If you look at the syntax of example <span style="font-variant:small-caps;">JShop2</span> problem files, you will see that these are the two parts of a problem file - (1) the initial state, and (2) the initial task network.
 
 Grading
 =======
 
-In order to properly evaluate your work and thought process, you will write a 2-page report in the AAAI conference format explaining your encoding and experiments. These guidelines are to be followed **exactly**. **Reports that are less than two pages of actual content, or not in format will receive 0 marks for the report criterion.** This report will be included in the deliverables of **Part B** of the assignment. The formatting instructions are available at the AAAI 2014 website[2]. The report must have the following sections:
+In order to properly evaluate your work and thought process, you will write a 2-page report in the AAAI conference format explaining your encoding and experiments. These guidelines are to be followed **exactly**. **Reports that are less than two pages of actual content, or not in format will receive 0 marks for the report criterion.** This report will be included in the deliverables of **Part B** of the assignment. The formatting instructions are available at the [AAAI website](http://www.aaai.org/Publications/Templates/AuthorKit.zip). The report must have the following sections:
 
 -   An introduction with your understanding of the problem domain, outlining the remainder of the paper;
 
@@ -92,7 +98,7 @@ Here are some lessons we learned in creating our own solution and writing papers
 
 -   The best way to figure out how to model a domain and associated problems is to look at these examples. If you feel the need for documentation, there is a complete manual included in the package from Sourceforge as well as the one from moodle.
 
--   Tables and graphs are a useful tool to show runtime performance of software[3];
+-   Tables and graphs are a useful tool to show runtime performance of software. GnuPlot is an excellent (and free) graph making software, available at [Gnuplot](http://www.gnuplot.info/);
 
 -   In order to evaluate the performance of a planning encoding, you need to specify problems with most of the parameters locked in, and measure runtime as one parameter increases (e.g. number of locations, number of containers, etc);
 
@@ -101,8 +107,3 @@ Here are some lessons we learned in creating our own solution and writing papers
 -   Overly large figures used to simply fill space in the report are also not a good idea;
 
 -   Reviewers have a more pleasant reading experience when papers are generated using <span style="font-variant:small-caps;">LaTeX</span>, it is very easy to spot the difference.
-
-
-[2] <http://www.aaai.org/Conferences/AAAI/2014/aaai14call.php>
-
-[3] GnuPlot is an excellent (and free) graph making software, available at <http://www.gnuplot.info/>

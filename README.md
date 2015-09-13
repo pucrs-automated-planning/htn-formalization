@@ -47,7 +47,7 @@ For this project, we will model the domain knowledge encoded as methods in an HT
 
 Your assignment is to develop a domain file using the specification above, and encode domain knowledge that will help the <span style="font-variant:small-caps;">JShop2</span> planner to finish the task of collecting all gold nuggets from the environment. The following hints may be useful, but you are welcome to use your creativity as long as you adhere to the specification mentioned above:
 
--   You do not need extra actions;
+-   You do not need extra actions (in fact, I've already prepared them for you in this package under [goldminers.shop](htn/goldminers.shop));
 
 -   You will need a recursive method to make the agent move all the way to a particular location;
 
@@ -83,7 +83,7 @@ In order to properly evaluate your work and thought process, you will write a 2-
 
 Grading will take consider elements of your encoding, experimentation and reporting of the work done. The criteria, as well as their weight in the final grade is as follows:
 
--   Domain Encoding (30%) — correctness of the domain knowledge encoding, in relation to the domain specification from Section \[sec:overview\];
+-   Domain Encoding (30%) — correctness of the domain knowledge encoding, in relation to the domain specification from above;
 
 -   Problem specifications (20%) — correctness of the problem specifications used for the experiments, particularly the initial state specification, as missing predicates here will jeopardise <span style="font-variant:small-caps;">JShop2</span>’s ability to solve your problem;
 

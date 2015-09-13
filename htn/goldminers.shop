@@ -1,0 +1,43 @@
+(defdomain goldminers
+  (
+  ; TODO incomplete domain file for the goldminers domain
+  	(:operator (!move ?agent ?from ?to)
+          ((at ?agent ?from) (adjacent ?from ?to) (not (blocked ?to))) ; Precondition
+          ((at ?agent ?from)) ; Delete List
+          ((at ?agent ?to)) ; Add List
+      )
+
+      (:operator (!pick ?agent ?gold ?where)
+          ((at ?agent ?where) (on ?gold ?where))
+          ((on ?gold ?where))
+          ((has ?agent ?gold))
+      )   
+
+      (:operator (!drop ?agent ?gold ?where)
+          ((at ?agent ?where))
+          ((has ?agent ?gold))
+          ((on ?gold ?where))
+      )
+    
+	
+	  ; TODO This is where you fill in your own methods - the methods below are sample methods and will not work
+    (:method (task1 ?x ?y ?z)
+      decomposition1
+        ((p ?x) (q ?y) (r ?z)) ; This is the precondition to apply this bit of the method
+        () ; Notice that here it replaces task1 with no task 
+
+			; Note that if you put multiple tasks in the same method, there will be no backtracking to try this
+      decomposition2
+        ((p ?x) (q ?y) (not (r ?z)))
+        ((!mve ?x ?y ?z))
+    )
+	
+	; However, if you want the search algorithm to try some other way of achieving task1, you put it in separate methods
+	(:method (task1 ?x ?y ?z)
+		decomposition2
+        ((p ?x) (q ?y) (not (r ?z)))
+        ((!mve ?x ?y ?z))
+	)
+	
+  )
+)

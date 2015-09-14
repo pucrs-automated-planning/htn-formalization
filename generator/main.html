@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery-1.10.2.js"></script>
+
+		<style type="text/css">
+			.block
+			{
+				margin: 5px;
+				height: 50px;
+				width: 50px;
+				position:absolute;
+				background-color: #000000;
+				color:white;
+			}
+
+			.Cell { background-color: #4B0500;}
+
+			.Gold { background-color: #B96414;}
+
+			.Obstacle { background-color: #E6E6E6;}
+
+			.Agent { background-color: #960A0A;}
+
+			.Goal { background-color: #078825;}
+
+			.show
+			{
+				margin: 5px;
+				position: absolute;
+				background-color: #FFFFFF;
+				bottom: 0px;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div id="config">
+			Width: <input id="mapWidth" type="text" > 
+			<br/>
+			Height: <input id="mapHeight" type="text">
+			<br/>
+			<button type="button" onClick="drawMap()">Ok</button>
+			<br/>
+		</div>
+		<div id="menu" style="visibility:hidden;">
+			<select id="blockType" style="float:left;">
+	  			<option value="Cell">Cell</option>
+	  			<option value="Obstacle">Obstacle</option>
+	  			<option value="Agent">Agent</option>
+	  			<option value="Gold">Gold</option>
+	  			<option value="Goal">Goal</option>
+			</select>
+
+			<button type="button" style="float:left;" onClick="writeFile()">Generate map</button>
+		</div>
+		<div id="main"/>
+		<div id="result" class="show"/>
+	</body>
+
+	<script>
+		function drawMap() {
+ 			width = $('#mapWidth').val();
+ 			height = $('#mapHeight').val();
+ 			$("#config").remove();
+ 			$("#menu").css("visibility","visible");
+ 			initialize(width, height);
+ 		}
+
+		function writeFile () {
+			var mapFile = '(defproblem problem miners (<br/>';
+
+			//objects - cells
+			for (var i = 1; i <= width; i++) {
+				for (var j = 1; j <= height; j++) {
+
+					var blockClass = $('#' + i + '_' + j).attr('class');
+					if(blockClass.indexOf('Obstacle') === -1){
+						mapFile += '(cell q'+ i + '_' + j + ')<br/>';
+					}
+				};
+			};
+
+			//Agents
+			var agents = $('.Agent').length;
+			for (var i = 1; i <= agents; i++) {
+				mapFile += '(agent a' + i +')<br/>';
+			};
+
+			var golds = $('.Gold').length;
+			for (var i = 1; i <= golds; i++) {
+				mapFile += '(gold g' +i+')<br/>';
+			};
+
+			//adjacent
+			for (var i = 1; i <= width; i++) {
+				for (var j = 1; j <= height; j++) {
+
+					//se dá pra andar, pode estar conectado com outras coisas
+					if($('#' + i + '_' + j).attr('class').indexOf('Obstacle') === -1){
+						//se tem algum bloco embaixo
+						if(j != height){
+							//se é Cell...
+							if( $('#'+i + '_' + (j+1)).attr('class').indexOf('Obstacle') === -1){
+								mapFile += '(adjacent q' + i + '_' + j + ' q' + i + '_' + (j +1) +')<br/>';
+								mapFile += '(adjacent q' + i + '_' + (j +1) + ' q' + i + '_' + j +')<br/>';
+							}
+						}
+						
+						//se tem bloco na direita
+						if(i != width){
+							//se é Cell...
+							if( $('#'+(i+1) + '_' + j).attr('class').indexOf('Obstacle') === -1){
+								mapFile += '(adjacent q' + i + '_' + j + ' q' + (i +1) + '_' + j +')<br/>';
+								mapFile += '(adjacent q' + (i +1) + '_' + j + ' q' + i + '_' + j +')<br/>';
+							}
+						}
+						
+					}
+				};
+			};
+
+			//agent at
+			agents = $('.Agent').length;
+			for (var i = 1; i <= width; i++) {
+				for (var j = 1; j <= height; j++) {
+					if($('#' + i + '_' + j).attr('class').indexOf('Agent') != -1){
+						mapFile += '(at a' + agents + ' q' +  i + '_' + j + ')<br/>';
+						agents--;
+					}
+				}
+			}
+
+			//gold on
+			for (var i = 1; i <= width; i++) {
+				for (var j = 1; j <= height; j++) {
+					if($('#' + i + '_' + j).attr('class') .indexOf('Gold') != -1){
+						mapFile += '(on g' + golds + ' q' +  i + '_' + j + ')<br/>';
+						golds--;
+					}
+				}
+			}
+
+			mapFile += ')<br/> ('
+			golds = $('.Gold').length;
+			goldsCount = $('.Gold').length;
+			var goal = 'q' + $('#main').find('.Goal').attr('id');
+			//goals
+			for(var i = 1; i<= golds; i++){
+				mapFile += '(get_gold a1 g' + goldsCount + ' '+ goal+  ')<br/>';
+				goldsCount--;
+			};
+			
+			mapFile += '))'
+			
+			$('#result').css('top',(height * 55)+100 + 'px');
+			$('#result').html(mapFile);
+		}
+		
+		function changeType (event) {
+			var block = '#'+ event.currentTarget.id;
+			var newType = $("#blockType").find(":selected").text();
+
+			$(block).removeClass('Cell');
+			$(block).removeClass('Gold');
+			$(block).removeClass('Goal');
+			$(block).removeClass('Agent');
+			$(block).removeClass('Obstacle');
+
+			$(block).addClass(newType);
+		}
+
+		function initialize (width,height) {
+			for(var i = 1; i<=width; i++){
+			for (var j = 1; j<=height; j++) {
+					var newId = i+'_'+j;
+					var newDiv = '<div id="' + newId +'" class="Cell block" align="left"' +
+					'style="left:'+ ((i*55)-55) +'px;' +
+					'top:'+ (j*55) +'px;">' 
+					+ newId
+					 + '</div>';
+
+					$('#main').append(newDiv);
+					$('#'+ newId).click(changeType);
+				}
+			}
+		}
+	</script>
+</html>

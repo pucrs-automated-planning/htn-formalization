@@ -1,0 +1,30 @@
+
+JSHOP HTN PLANNER
+
+
+
+ENVIRONMENT SETUP
+
+	Export jshop directory to PATH:
+
+		export PATH:<jshop-direcotry>:$PATH
+
+	Ou, usando o script de setup
+
+		source ./setup
+
+
+
+RUNNING THE PLANNER
+
+
+	Run jshop with domain_file and problem_file
+	Example:
+
+		jshop domain.jshop problem.jshop
+
+
+	Extra options can be discovered with --help parameter.
+	Example:
+
+		jshop --help

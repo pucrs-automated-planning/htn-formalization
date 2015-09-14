@@ -1,0 +1,12 @@
+5
+in
+truck-at
+package
+at
+truck
+2
+load-packages
+move-packages
+2
+!load
+!drive

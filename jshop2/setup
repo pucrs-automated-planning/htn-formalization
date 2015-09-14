@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Export jshop path
+export PATH=$PATH:$(pwd)

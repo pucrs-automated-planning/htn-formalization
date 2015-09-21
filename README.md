@@ -47,9 +47,11 @@ For this project, we will model the domain knowledge encoded as methods in an HT
 
 Your assignment is to develop a domain file using the specification above, and encode domain knowledge that will help the <span style="font-variant:small-caps;">JShop2</span> planner to finish the task of collecting all gold nuggets from the environment. The following hints may be useful, but you are welcome to use your creativity as long as you adhere to the specification mentioned above:
 
--   You do not need extra actions (in fact, I've already prepared them for you in this package under [goldminers.shop](htn/goldminers.shop));
+-   You do not need extra actions (in fact, I've already prepared them for you in this package under [goldminers.shop](htn/goldminers.shop)), but you may need to create "bookkeeping" actions to keep track of the locations you have tried to decompose methods to;
 
 -   You will need a recursive method to make the agent move all the way to a particular location;
+
+-   There are domains that do search over grid space in the examples included in JSHOP2, you may want to look at the [rover](jshop2/examples/rover) domain; and
 
 -   You may need methods to pick up and drop gold nuggets that use the move method above.
 

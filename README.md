@@ -1,4 +1,4 @@
-# htn-formalization
+# HTN formalization
 :suspect: HTN Planning Assignment
 
 **Felipe Meneguzzi**  
@@ -69,8 +69,10 @@ You can use the operators (action templates) as defined below:
             (handempty)
         )
         (; add effects
+        
         )
-    ) 
+    )
+
     (:operator (!destroy ?room)
         (;preconditions
             (at ?room)
@@ -78,11 +80,13 @@ You can use the operators (action templates) as defined below:
             (not (monster-in ?room))
         )
         (; delete effects
+        
         )
         (; add effects
             (handempty)
         )
     )
+
     (:operator (!disarm ?room)
         (;preconditions
             (handempty)
@@ -93,19 +97,20 @@ You can use the operators (action templates) as defined below:
             (trap-in ?room)
         )
         (; add effects
+        
         )
     )
 ```
 
 Your assignment is to develop a domain file using the specification above, and encode a domain knowledge that will help the HTN planner to finish the task. The following hints may be useful, but you are welcome to use your creativity as long as you adhere to the specification mentioned above:
 
--   You do not need extra actions (in fact, I've already prepared them for you in this package under [rpg.shop](htn/goldminers.shop)), but you may need to create "bookkeeping" actions to keep track of the locations you have tried to decompose methods to;
+-   You do not need extra actions (in fact, they are already prepared for you in this package under [rpg.shop](htn/rpg.shop)), but you may need to create "bookkeeping" actions to keep track of the locations you have tried to decompose methods to;
 
--   You will need a recursive method to make the agent move all the way to a particular location;
+-   You will need a recursive method to make the agent travel all the way to a particular location;
 
 -   There are domains that do search over grid space in the examples included in JSHOP2, you may want to look at the [rover](jshop2/examples/rover) domain; and
 
--   You may need methods to pick up and drop gold nuggets that use the move method above.
+-   You may need specific methods to travel that use the operator above.
 
 Problem Instances
 =================
@@ -129,7 +134,7 @@ In order to properly evaluate your work and thought process, you will write a 2-
 
 -   An introduction with your understanding of the problem domain, outlining the remainder of the paper;
 
--   Two domain formalisation sections explaining your approach to formalising the problems from Section \[sec:problems\]
+-   Two domain formalisation sections explaining your approach to formalising the problems from the problems instance section 
 
 -   One experimentation section where the performance of the HTN planner is measured using your domain knowledge for each of the domains, on multiple problems.
 

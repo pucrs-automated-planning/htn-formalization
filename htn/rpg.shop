@@ -1,0 +1,102 @@
+(defdomain rpg (
+
+  ; TODO incomplete domain file for the rpg domain
+  (:operator (!move ?room1 ?room2)
+    (;preconditions - simulate PDDL tags with comments
+      (connected ?room1 ?room2)
+      (at ?room1)
+      (not (destroyed ?room2))
+      (not (trap-in ?room1))
+    )
+    (; delete effects
+      (at ?room1)
+    )
+    (; add effects
+      (destroyed ?room1)
+      (at ?room2)
+    )
+  )
+
+  (:operator (!pickup ?room)
+    (;preconditions
+      (handempty)
+      (sword-in ?room)
+      (at ?room)
+    )
+    (; delete effects
+      (sword-in ?room)
+      (handempty)
+    )
+    (; add effects
+    
+    )
+  )
+
+  (:operator (!destroy ?room)
+    (;preconditions
+      (at ?room)
+      (not (trap-in ?room))
+      (not (monster-in ?room))
+    )
+    (; delete effects
+    
+    )
+    (; add effects
+      (handempty)
+    )
+  )
+
+  (:operator (!disarm ?room)
+    (;preconditions
+      (handempty)
+      (at ?room)
+      (trap-in ?room)
+    )
+    (; delete effects
+      (trap-in ?room)
+    )
+    (; add effects
+    
+    )
+  )
+
+  ; TODO This is where you fill in your own methods - the methods below are sample methods and will not work
+  (:method (task1 ?x ?y ?z)
+    ; This is a label
+    decomposition1
+    ; This is the precondition to apply this bit of the method
+    (;preconditions
+      (p ?x)
+      (q ?y)
+      (r ?z)
+    )
+    ; Notice that here it replaces task1 with no task
+    (;subtasks
+      
+    )
+
+    ; Note that if you put multiple tasks in the same method, there will be no backtracking to try this
+    decomposition2
+    (;preconditions
+      (p ?x)
+      (q ?y)
+      (not (r ?z))
+    )
+    (;subtasks
+      (!mve ?x ?y ?z)
+    )
+  )
+
+  ; However, if you want the search algorithm to try some other way of achieving task1, you put it in separate methods
+  (:method (task1 ?x ?y ?z)
+    decomposition2
+    (;preconditions
+      (p ?x)
+      (q ?y)
+      (not (r ?z))
+    )
+    (;subtasks
+      (!mve ?x ?y ?z)
+    )
+  )
+))

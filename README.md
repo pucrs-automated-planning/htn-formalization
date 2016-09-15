@@ -44,10 +44,10 @@ You can use the operators (action templates) as defined below:
 ```LISP
     (:operator (!move ?room1 ?room2)
         (;preconditions - simulate PDDL tags with comments
-          (connected ?room1 ?room2)
-          (at ?room1)
-          (not (destroyed ?room2))
-          (not (trap-in ?room1))
+            (connected ?room1 ?room2)
+            (at ?room1)
+            (not (destroyed ?room2))
+            (not (trap-in ?room1))
         )
         (; delete effects
             (at ?room1)

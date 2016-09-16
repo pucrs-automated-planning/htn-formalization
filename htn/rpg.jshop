@@ -37,6 +37,7 @@
       (at ?room)
       (not (trap-in ?room))
       (not (monster-in ?room))
+      (not (handempty))
     )
     (; delete effects
     

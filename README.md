@@ -49,6 +49,11 @@ You can use the operators (action templates) as defined below:
             (at ?room1)
             (not (destroyed ?room2))
             (not (trap-in ?room1))
+            ; Either test the following disjunction here or in the preconditions of methods
+            ;(or
+            ;  (not (handempty))
+            ;  (not (monster-in ?room))
+            ;)
         )
         (; delete effects
             (at ?room1)
@@ -79,6 +84,7 @@ You can use the operators (action templates) as defined below:
             (at ?room)
             (not (trap-in ?room))
             (not (monster-in ?room))
+            (not (handempty))
         )
         (; delete effects
         

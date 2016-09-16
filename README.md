@@ -19,7 +19,7 @@ For this assignment, you can choose between two open source implementation of HT
 
 -   one file named `rpg.jshop` containing the domain encoding;
 
--   three files containing the problems you formalised, named `pb\sigma.jshop`, where `\sigma` is the sequential number of your problem, e.g. `pb1.jshop`, `pb2.jshop`;
+-   three files containing the problems you formalised, named `pb\sigma.jshop`, where `\sigma` is the sequential number of your problem, e.g. `pb1.jshop`, `pb2.jshop`, `pb3.jshop`;
 
 -   the same number of files (with similar names) showing the traces created for the problems you created (e.g. `pb1.jshop` and `pb1.txt`); and
 
@@ -131,6 +131,10 @@ Problems are specified such that cells stand for rooms and edges between them re
 
 ## Problem 2
 ![Problem 2](pb5.png "Problem 2")
+
+## Problem 3
+![Problem 3](pb6.png "Problem 3")
+
 
 Grading
 =======

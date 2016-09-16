@@ -120,10 +120,10 @@ Below there are pictures of the problem instances that you need to model in HTN,
 Problems are specified such that cells stand for rooms and edges between them represent corridors. 
 “I” is the hero's initial position, “G” is hero's desired goal position, “S” indicates a sword, “M” is a monster, and “T” stands for trap.
 
-![Problem 1](prob4.png "Problem 1")
+![Problem 1](pb4.png "Problem 1")
 _Figure 1 - Problem 1_
 
-![Problem 2](prob5.png "Problem 2")
+![Problem 2](pb5.png "Problem 2")
 _Figure 2 - Problem 2_
 
 Grading

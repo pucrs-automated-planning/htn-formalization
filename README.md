@@ -42,6 +42,7 @@ For this project, you will model the domain knowledge encoded as methods in an H
 You can use the operators (action templates) as defined below:
 
 ```LISP
+    ; This is a comment
     (:operator (!move ?room1 ?room2)
         (;preconditions - simulate PDDL tags with comments
             (connected ?room1 ?room2)
@@ -119,12 +120,10 @@ Below there are pictures of the problem instances that you need to model in HTN,
 Problems are specified such that cells stand for rooms and edges between them represent corridors. 
 “I” is the hero's initial position, “G” is hero's desired goal position, “S” indicates a sword, “M” is a monster, and “T” stands for trap.
 
-<!--![Problem 1](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob1.png "Problem 1")-->
-<img src="https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob1.png" width="200"></br>
+![Problem 1](prob4.png "Problem 1")
 _Figure 1 - Problem 1_
 
-<!--![Problem 2](https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob2.png "Problem 2")-->
-<img src="https://github.com/pucrs-automated-planning/htn-formalization/raw/master/prob2.png" width="200"></br>
+![Problem 2](prob5.png "Problem 2")
 _Figure 2 - Problem 2_
 
 Grading

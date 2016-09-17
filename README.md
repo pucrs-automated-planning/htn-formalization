@@ -39,7 +39,7 @@ For this project, you will model the domain knowledge encoded as methods in an H
 - S/He can also **destroy** the sword the hero currently holds. However, this can have unpleasant effects if done in a room with a trap or a monster;
 - Finally, the hero can **disarm** a trap, if there is a trap in the room the hero is in and the hero is empty-handed (does not hold a sword), then the hero can disarm it.
 
-You can use the operators (action templates) as defined below:
+You can (and we encourage you to) use the operators (action templates) as defined below:
 
 ```LISP
     ; This is a comment
@@ -109,9 +109,11 @@ You can use the operators (action templates) as defined below:
     )
 ```
 
-Your assignment is to develop a domain file using the specification above, and encode a domain knowledge that will help the HTN planner to finish the task. The following hints may be useful, but you are welcome to use your creativity as long as you adhere to the specification mentioned above:
+Your assignment is to develop a domain file using the specification above, and encode domain knowledge that will help the HTN planner to finish the task. The following hints may be useful, but you are welcome to use your creativity as long as you adhere to the specification above:
 
 -   You do not need extra actions (in fact, they are already prepared for you in this package under [rpg.shop](htn/rpg.shop)), but you may need to create "bookkeeping" actions to keep track of the locations you have tried to decompose methods to;
+
+-   In JSHOP2, bookkeeping actions are encoded using double exclamation marks ```(:operator (!!mark ?room) ...)```
 
 -   You will need a recursive method to make the agent travel all the way to a particular location;
 
@@ -122,8 +124,8 @@ Your assignment is to develop a domain file using the specification above, and e
 Problem Instances
 =================
 
-Below there are pictures of the problem instances that you need to model in HTN, once you are done making your domain file. The text that accompanies each image is self-explanatory; remember, you must model corridors between rooms, rooms for the hero to move through, and you can only move between connected rooms and visit each room only **once**. 
-Problems are specified such that cells stand for rooms and edges between them represent corridors. 
+We illustrate the problem instances that you need to model in HTN in the pictures below, once you are done encoding your domain file. The text that accompanies each image is self-explanatory; remember, you must model corridors between rooms, rooms for the hero to move through, and you can only move between connected rooms and visit each room only **once**. 
+We specify the problems so that cells stand for rooms and edges between them represent corridors. 
 “I” is the hero's initial position, “G” is hero's desired goal position, “S” indicates a sword, “M” is a monster, and “T” stands for trap.
 
 ## Problem 1
@@ -149,9 +151,9 @@ In order to properly evaluate your work and thought process, you will write a 2-
 
 -   One conclusion section, where you will summarise your experience in encoding planning domains and discuss the performance of <span style="font-variant:small-caps;">JShop2</span>, and any limitations encountered in solving the problems you encoded.
 
-Grading will take consider elements of your encoding, experimentation and reporting of the work done. The criteria, as well as their weight in the final grade is as follows:
+Grading will take into consideration elements of your encoding, experimentation and reporting of the work done. The criteria, as well as their weight in the final grade is as follows:
 
--   Domain Encoding (30%) — correctness of the domain knowledge encoding, in relation to the domain specification from above;
+-   Domain Encoding (30%) — correctness of the domain knowledge encoding, in relation to the domain specification above;
 
 -   Problem specifications (20%) — correctness of the problem specifications used for the experiments, particularly the initial state specification, as missing predicates here will jeopardise <span style="font-variant:small-caps;">JShop2</span>’s ability to solve your problem;
 

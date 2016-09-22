@@ -141,7 +141,7 @@ We specify the problems so that cells stand for rooms and edges between them rep
 Grading
 =======
 
-In order to properly evaluate your work and thought process, you will write a 2-page report in the AAAI conference format explaining your encoding and experiments. These guidelines are to be followed **exactly**. **Reports that are less than two pages of actual content, or not in format will receive 0 marks for the report criterion.** This report will be included in the deliverables of **Part B** of the assignment. The formatting instructions are available at the [AAAI website](http://www.aaai.org/Publications/Templates/AuthorKit.zip). The report must have the following sections:
+In order to properly evaluate your work and thought process, you will write a 2-page report in the AAAI conference format explaining your encoding and experiments. These guidelines are to be followed **exactly**. **Reports that are less than two pages of actual content, or not in format will receive 0 marks for the report criterion.** This report will be included in the deliverables of **Part B** of the assignment. [The formatting instructions are available at ShareLatex (AAAI Press)](https://pt.sharelatex.com/templates/journals/aaai-press). The report must have the following sections:
 
 -   An introduction with your understanding of the problem domain, outlining the remainder of the paper;
 

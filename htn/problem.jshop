@@ -1,4 +1,4 @@
-(defproblem pb1 rpg
+(defproblem problem rpg
   (;init
     (cell cell1) (cell cell2) (cell cell3)
     (cell cell4) (cell cell5) (cell cell6)

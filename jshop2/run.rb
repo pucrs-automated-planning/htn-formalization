@@ -29,12 +29,6 @@ begin
          "  mode:         #{mode}",
          "  plans:        #{plans}"
 
-    # Cleanup
-    File.delete("#{domain_name}.java") if File.exist?("#{domain_name}.java")
-    File.delete("#{domain_name}.txt") if File.exist?("#{domain_name}.txt")
-    File.delete("#{problem_name}.java") if File.exist?("#{problem_name}.java")
-    File.delete(*Dir.glob('*.class'))
-
     # JSHOP steps
     puts 'Translating domain...'
     system("java -cp #{CLASSPATH} JSHOP2.InternalDomain #{domain_file}")
@@ -47,5 +41,11 @@ begin
 
     puts 'Running planner...'
     system("java -cp #{CLASSPATH} #{mode} #{problem_name}")
+    
+    # Cleanup
+    File.delete("#{domain_name}.java") if File.exist?("#{domain_name}.java")
+    File.delete("#{domain_name}.txt") if File.exist?("#{domain_name}.txt")
+    File.delete("#{problem_name}.java") if File.exist?("#{problem_name}.java")
+    File.delete(*Dir.glob('*.class'))
   end
 end

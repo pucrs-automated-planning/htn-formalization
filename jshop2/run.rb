@@ -22,7 +22,7 @@ begin
     domain_name = File.basename(domain_file, '.*')
     problem_name = File.basename(problem_file, '.*')
     mode = 'run' if mode != 'gui'
-    plans = 'a' if mode !~ /\d+/
+    plans = 'a' if plans !~ /\d+/
     puts 'Input',
          "  domain file:  #{domain_file}",
          "  problem file: #{problem_file}",

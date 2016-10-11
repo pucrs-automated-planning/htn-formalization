@@ -15,7 +15,7 @@ CLASSPATH = [TOOLPATH, "#{TOOLPATH}/antlr.jar", "#{TOOLPATH}/JSHOP2.jar", '.'].j
 
 begin
   if ARGV.size < 2
-    puts 'Use glue.rb domain problem [mode=run|gui] [plans=a|integer]'
+    puts 'Use run.rb domain problem [mode=run|gui] [plans=a|integer]'
   else
     # Input
     domain_file, problem_file, mode, plans = ARGV

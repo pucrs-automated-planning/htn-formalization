@@ -1,3 +1,11 @@
+//
+//  run.java
+//  JSHOP2 runner in the terminal
+//
+//  Created by Felipe Meneguzzi on 2020-06-04.
+//  Copyright 2020 Felipe Meneguzzi. All rights reserved.
+//
+
 import JSHOP2.*;
 import java.util.*;
 import java.lang.reflect.*;

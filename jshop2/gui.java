@@ -1,3 +1,11 @@
+//
+//  gui.java
+//  JSHOP gui interface
+//
+//  Created by Felipe Meneguzzi on 2020-06-04.
+//  Copyright 2020 Felipe Meneguzzi. All rights reserved.
+//
+
 import JSHOP2.*;
 import java.util.*;
 import java.lang.reflect.*;

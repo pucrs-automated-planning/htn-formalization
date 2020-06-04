@@ -98,6 +98,15 @@ while test -n "$1"; do
 	shift
 done
 
+## Workaround for Java files if they are present
+if [ -f gui.java ]; then
+	mv gui.java gui.java.txt
+fi
+
+if [ -f run.java ]; then
+	mv run.java run.java.txt
+fi
+
 if [ -f ${DOMAIN_FILE:=domain_file} ]; then
 	DOMAIN_NAME=${DOMAIN_FILE%.*}
 else
@@ -144,4 +153,6 @@ if [ "${KEEP_OUTPUT}" = "0" ]; then
 	rm -f ${DOMAIN_NAME}.java
 	rm -f ${DOMAIN_NAME}.txt
 	rm -f ${PROBLEM_NAME}.java
+	mv gui.java.txt gui.java 
+	mv run.java.txt run.java 
 fi

@@ -7,6 +7,11 @@
       (at ?room1)
       (not (destroyed ?room2))
       (not (trap-in ?room1))
+	  ; Either test the following disjunction here or in the preconditions of methods
+      (or
+       (not (handempty))
+       (not (monster-in ?room))
+      )
     )
     (; delete effects
       (at ?room1)

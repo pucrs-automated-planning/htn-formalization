@@ -1,10 +1,12 @@
 (defproblem problem rpg
   (;init
     (connected cell1 cell2) (connected cell1 cell4) 
+	(connected cell2 cell6) 
 	(connected cell1 cell6) 
     ; TODO There are missing adjacencies here, you should fill them up
-
+	
     (at cell1)
+	
   )
 
   (;tasks

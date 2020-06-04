@@ -52,7 +52,7 @@ You can (and we encourage you to) use the operators (action templates) as define
             ; Either test the following disjunction here or in the preconditions of methods
             ;(or
             ;  (not (handempty))
-            ;  (not (monster-in ?room))
+            ;  (not (monster-in ?room2))
             ;)
         )
         (; delete effects

@@ -10,7 +10,7 @@
 	  ; Either test the following disjunction here or in the preconditions of methods
       (or
        (not (handempty))
-       (not (monster-in ?room))
+       (not (monster-in ?room2))
       )
     )
     (; delete effects
@@ -65,7 +65,6 @@
     
     )
   )
-
   ; TODO This is where you fill in your own methods - the methods below are sample methods and will not work
   (:method (task1 ?x ?y ?z)
     ; This is a label

@@ -1,17 +1,13 @@
 (defproblem problem rpg
   (;init
-    (cell cell1) (cell cell2) (cell cell3)
-    (cell cell4) (cell cell5) (cell cell6)
-
-    (hero bob)
-
-    (adj cell1 cell2) (adj cell1 cell4) 
+    (connected cell1 cell2) (connected cell1 cell4) 
+	(connected cell1 cell6) 
     ; TODO There are missing adjacencies here, you should fill them up
 
-    (at bob cell1)
+    (at cell1)
   )
 
   (;tasks
-    (move bob cell1 cell6)
+    (!move cell1 cell6)
   )
 )

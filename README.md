@@ -1,4 +1,4 @@
-# htn-formalization-reference
+# htn-formalization
 :suspect: HTN Planning Assignment Reference
 
 **Felipe Meneguzzi**  

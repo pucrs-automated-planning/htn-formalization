@@ -83,7 +83,7 @@ You can (and we encourage you to) use the operators (action templates) as define
         (;preconditions
             (at ?room)
             (not (trap-in ?room))
-            (not (monster-in ?room))
+            (monster-in ?room)
             (not (handempty))
         )
         (; delete effects

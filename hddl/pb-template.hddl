@@ -1,0 +1,31 @@
+(define (problem pb-template) (:domain rpg)
+(:objects 
+    room1 room2 room3 room4 room5 room6 room7 room8 - object
+)
+
+
+(:htn 
+    :tasks (and (something room1))
+    :ordering ()
+    :constraints ()
+ )
+(:init
+    (connected room1 room2)
+    (connected room2 room1) (connected room2 room3) (connected room2 room5)
+    (connected room3 room2) (connected room3 room4) (connected room3 room6)
+    (connected room4 room3) (connected room4 room7) (connected room4 room8)
+    (connected room5 room2) (connected room5 room6)
+    (connected room6 room3) (connected room6 room5) (connected room6 room7)
+    (connected room7 room4) (connected room7 room6) (connected room7 room8)
+    (connected room8 room4) (connected room8 room7)
+
+    (trap-in room2)
+    (monster-in room3)
+    (sword-in room4)
+    (monster-in room7)
+
+    (at room8)
+    (handempty)
+)
+
+)

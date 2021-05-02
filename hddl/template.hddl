@@ -1,0 +1,113 @@
+(define (domain rpg)
+    (:requirements :strips :negative-preconditions :typing)
+    (:types 
+        object
+    )
+    (:predicates
+        (at ?room - object)
+        (trap-in ?room - object)
+        (sword-in ?room - object)
+        (monster-in ?room - object)
+        (connected ?room1 ?room2 - object)
+        (handempty)
+        (destroyed ?room - object)
+    )
+
+    ;; Tasks
+
+    (:task something :parameters (?x - object))
+
+   ;; Methods
+
+  ; Hero's journey
+  (:method achieve-something-1
+    :parameters (?x ?y - object)
+    :task (something ?y)
+    :precondition (and (at ?x))
+    :subtasks ()
+  )
+
+  (:method achieve-something-1
+    :parameters (?x ?y - object)
+    :task (something ?y)
+    :precondition (and (at ?x))
+    :ordered-subtasks ((something ?x) ) ; this is recursive
+  )
+  
+
+  ; Move from one room to another with sword
+  (:action move-with-sword
+    :parameters (?room1 ?room2 - object)
+    :precondition (and
+      (connected ?room1 ?room2)
+      (at ?room1)
+      (not (destroyed ?room2))
+      (not (trap-in ?room2))
+      (not (handempty))
+    )
+    :effect (and
+      (destroyed ?room1)
+      (not (at ?room1))
+      (at ?room2)
+    )
+  )
+
+  ; Move from one room to another
+  (:action move
+    :parameters (?room1 ?room2 - object)
+    :precondition (and
+      (connected ?room1 ?room2)
+      (at ?room1)
+      (not (destroyed ?room2))
+      (not (trap-in ?room1))
+      (not (monster-in ?room2))
+      ; (handempty)
+    )
+    :effect (and
+      (not (at ?room1))
+      (at ?room2)
+      (destroyed ?room1)
+    )
+  )
+
+  ; Pick sword present in room
+  (:action pickup
+    :parameters (?room - object)
+    :precondition (and
+      (handempty)
+      (sword-in ?room)
+      (at ?room)
+    )
+    :effect (and
+      (not (sword-in ?room))
+      (not (handempty))
+    )
+  )
+
+  ; Destroy sword to obtain empty_hands
+  (:action destroy
+    :parameters (?room - object)
+    :precondition (and
+      (at ?room)
+      (not (trap-in ?room))
+      (not (monster-in ?room))
+    )
+    :effect (and
+      (handempty)
+    )
+  )
+
+  ; Disarm trap before leaving the room
+  (:action disarm
+    :parameters (?room - object)
+    :precondition (and
+      (handempty)
+      (at ?room)
+      (trap-in ?room)
+    )
+    :effect (and
+      (not (trap-in ?room))
+    )
+  )
+
+)
